@@ -1,0 +1,697 @@
+Chapter 1
+-One action, or method, that is built into the consoleobject is the .log() method. When we write console.log() what we put inside the parentheses will get printed, or logged, to the console.
+
+-Comments
+-There are two types of code comments in JavaScript:
+A single line comment will comment out a single line and is denoted with two forward slashes //preceding it.
+-//print 5 to the console
+console.log(5);
+Or say--console.log(5); // print 5
+
+- multi-line comment will comment out multiple lines and is denoted with /* to begin the comment, and */ to end the comment.
+Eg.
+/*This is all comments.
+console.log(100);
+None of this is not going to run;
+console.log(99);
+*/
+Eg
+console.log(/*ignore!*/5); //still print 5
+
+-Multi-line comments are often best suited to prevent a block of code from running. However, both types of comments can be used for either purpose.
+
+-Data Types
+seven fundamental data types:
+number,string(‘...’,”....”),boolean(true or false),Null(null quote), undefined,symbol,object(collection of related data)
+The first 6 of those types are considered primitive data types. They are the most basic data types in the language. Objects are more complex, and you’ll learn much more about them as you progress through JavaScript. 
+
+-Arithmetic Operators
+console.log(3+4);   // prints to  7
+-String Concatenation
+This process of appending one string to another is called concatenation
+Eg
+console.log(‘hi’ + ‘ya’);  //print ‘hiya’
+console.log(‘front’ +’  ‘ + ‘space’);  //print ‘front space’
+
+-Properties
+console.log(‘Hello’.length); //print 5
+The . is another operator! We call it the dot operator.
+console.log('Teaching the world how to code'.length);
+-Methods
+'example string'.methodName().
+When we use console.log() we're calling the .log() method on the console object. 
+console.log(‘hello’.toUpperCase()); //print HELLO
+console.log(‘Hey’.startsWith(‘H’)); // print true
+(On the first line, the .toUpperCase() method is called on the string instance 'hello'. The result is logged to the console. This method returns a string in all capital letters: 'HELLO'.
+On the second line, the .startsWith() method is called on the string instance 'Hey'. This method also accepts the character 'H' as an input, or argument, between the parentheses. Since the string 'Hey' does start with the letter 'H', the method returns the boolean true.
+)
+-// Use .toUpperCase() to log 'Codecademy' in all uppercase letters
+console.log('Codecademy'.toUpperCase());
+
+// Use a string method to log the following string without whitespace at the beginning and end of it.
+console.log('    Remove whitespace   '.trim());
+
+-Built-in Objects
+Let's call the .random() method from the built-in Math object:
+
+console.log(Math.random()); //print the random number between 0 and 1
+Math.floor() takes a decimal number, and rounds down to the nearest whole number. 
+Eg
+console.log(Math.floor(Math.random() * 100)); //print 43
+console.log(Math.ceil(43.8)); //print 44
+console.log(Number.isInteger(2017)); //print true
+
+Chapter 2
+-Variables
+In programming, a variable is a container for a value. 
+In short, variables label and store data in memory. There are only a few things you can do with variables:
+Create a variable with a descriptive name.
+Store or update information stored in a variable.
+Reference or “get” information stored in a variable.
+ Observe the diagram with the colored boxes. Each box represents variables; the values are represented by the content, and the name is represented with the label.In this lesson, we will cover how to use the var, let, and const keywords to create variables.
+Eg.
+Var favoriteFood=’pizza’;
+console.log(favoriteFood);
+-Create a Variable: let
+
+Eg
+-let meal=’beef’
+console.log(meal);
+//output is beef
+meal=’pork’;
+console.log(meal);
+//output is pork
+
+Eg
+-let price;
+console.log(price);
+//output is undefined
+price=’350’;
+console.log(price);
+//output is 350
+
+Eg
+-let changeMe = true;
+
+changeMe = false;
+
+console.log(changeMe);
+//output is true
+
+-Create a Variable: const
+-The way you declare a const variable and assign a value to it follows the same structure as let and var.
+however, a const variable cannot be reassigned because it is constant. If you try to reassign a constvariable, you'll get a TypeError.
+If you're trying to decide between which keyword to use, let or const, think about whether you'll need to reassign the variable later on. If you do need to reassign the variable use let, otherwise, use const.
+-Mathematical Assignment Operators
+Eg
+Let w=4;
+w=w+1;
+console.log(w);
+//output is 5
+Same as below
+Let w=4
+w+=1
+console.log(w);
+//Output is 5
+In the second example, we used the += assignment operator to reassign w.
+let x = 20;
+x -= 5; // Can be written as x = x - 5
+console.log(x); // Output: 15
+
+let y = 50;
+y *= 2; // Can be written as y = y * 2
+console.log(y); // Output: 100
+
+let z = 8;
+z /= 2; // Can be written as z = z / 2
+console.log(z); // Output: 4
+
+-The Increment and Decrement Operator
+The increment operator will increase the value of the variable by 1. The decrement operator will decrease the value of the variable by 1. For example:
+let a = 10;
+a++;
+console.log(a); // Output: 11
+let b = 20;
+b--;
+console.log(b); // Output: 19
+
+
+-String Concatenation with Variables
+Eg
+let myPet = 'armadillo';
+console.log('I own a pet ' + myPet + '.'); 
+// Output: 'I own a pet armadillo.'
+
+-let favoriteAnimal = "giraffe";
+
+console.log("My favorite animal: " + favoriteAnimal);
+
+//output: My favorite animal: giraffe
+
+-String Interpolation
+-In the ES6 version of JavaScript, we can insert, or interpolate, variables into strings using template literals. Check out the following example where a template literal is used to log strings together:
+Eg
+Const myPet=’dora’;
+console.log(‘My pet’s name is: ${dora}.’);
+//output: My pet’s name is dora.
+-eg
+let myName = 'Natalia';
+let myCity = 'Mexico City';
+
+console.log(`My name is ${myName}. My favorite city is ${myCity}.`);
+//Output: My name is Natalia. My favorite city is Mexico City.
+
+-typeof operator
+const unknown1 = 'foo';
+console.log(typeof unknown1); // Output: string
+
+const unknown2 = 10;
+console.log(typeof unknown2); // Output: number
+
+const unknown3 = true; 
+console.log(typeof unknown3); // Output: boolean
+
+
+Eg
+let newVariable = 'Playing around with typeof.';
+
+console.log(typeof newVariable);
+
+newVariable = 1;
+
+console.log(typeof newVariable);
+//output: string
+		Number
+
+
+Review
+The var keyword is used in pre-ES6 versions of JS.
+let is the preferred way to declare a variable when it can be reassigned, and const is the preferred way to declare a variable with a constant value.
+
+
+S6, template literals use backticks ` and ${}to interpolate values into a string.
+The typeof keyword returns the data type (as a string) of a value.
+Lesson 3
+-What are Conditional Statements?
+We'll be covering the following concepts:
+if, else if, and else statements.
+comparison operators.
+logical operators.
+truthy vs falsy values.
+ternary operators.
+the switch statement.
+Eg
+if(true){
+console.log(‘The message is printed!’);
+}
+//print “The message is printed!”
+
+-If...Else Statements
+Eg
+if(false){
+  console.log('The code in this block will not run.');
+}else{
+  console.log('But the code in this block will!');
+}
+//prints"But the code in this block will!""
+Eg
+let sale = true;
+
+sale = false;
+
+if (sale) {
+  console.log('Time to buy!');
+} else {
+  console.log('Time to wait for a sale.')
+}
+// print “Time to wait for a sale.”
+Comparison Operators
+Here is a list of some handy comparison operators and their syntax:
+Less than: <
+Greater than: >
+Less than or equal to: <=
+Greater than or equal to: >=
+Is equal to: ===
+Is NOT equal to: !==
+Eg
+10<12// print out”true”
+‘apple’===’orange’// print false
+Eg
+let hungerLevel = 7;
+
+if (hungerLevel > 7) {
+  console.log('Time to eat!');
+} else {
+  console.log('We can eat later!');
+};
+//print out “We can eat later!”, can try <=,>=,it show time to eat, if <,>, it show we can eat later
+
+-Logical Operators
+There are three logical operators:
+the and operator (&&)
+the or operator (||)
+the not operator, otherwise known as the bangoperator (!)
+Eg
+if(stopLight==='green'&&pedestrains===0)
+  {
+    console.log('Go!');
+  }else{
+    console.log('Stop!');
+  }
+
+Eg
+if(day==='Saturday'||day==='Sunday')
+  {
+    console.log('Enjoy the weekend!');
+  }else {
+    console.log('Do some work.');
+  }
+-The ! not operator reverses, or negates, the value of a boolean:
+Eg
+Let excited=true;
+console.log(!excited); //print out false
+Let sleepy=false;
+console.log(!excited); // print out true
+
+-Exercise
+In main.js there are two variables mood and tirednessLevel.
+Let's create an if...else statement that checks if mood is 'sleepy' and tirednessLevel is greater than 8.
+If both conditions evaluate to true, then console.log() the string 'time to sleep'. Otherwise, we should console.log() 'not bed time yet'.
+After you press "Run", play around with the || operator and the ! operator! What happens if you negate the value of the entire statement with ! and switch to || instead of &&?
+Answer-
+-let mood = 'sleepy';
+let tirednessLevel = 6;
+
+if (mood === 'sleepy' && tirednessLevel > 8) {
+  console.log('time to sleep');
+} else {
+  console.log('not bed time yet');
+}
+//print “not bed time yet”
+//If||, print “time to sleep”
+//If!,print “error”
+
+-Truthy and Falsy
+truthy
+Eg.
+Let myVariable=’I exist.’
+if(myVariable){
+console.log(myVariable);
+}else{
+console.log(‘the variable is not exist.’);
+}
+So which values are falsy— or evaluate to falsewhen checked as a condition? The list of falsy values includes:
+0
+Empty strings like "" or ''
+null which represent when there is no value at all
+undefined which represent when a declared variable lacks a value
+NaN, or Not a Number
+Eg
+The condition evaluates to false because the value of the numberOfApples is 0. Since 0 is a falsy value, the code block in the else statement will run.
+Let numberOfApples=0;
+if(numberOfApples){
+console.log(‘let us eat apples.’);
+}else{
+console.log(‘no apple left.’);
+}
+//print “no apple left.”
+
+Eg
+let wordCount = 0;
+
+if (wordCount) {
+  console.log("Great! You've started your work!");
+} else {
+  console.log('Better get to work!');
+}
+
+
+let favoritePhrase = 'Hello World!';
+
+if (favoritePhrase) {
+  console.log("This string doesn't seem to be empty.");
+} else {
+  console.log('This string is definitely empty.');
+}
+//print “Better get to work!””This string doesn't seem to be empty.”
+//if change to wordcount=1,print “Great! You've started your work!”
+//if change to let favoritePhrase = '';,mean empty inside the string, ,print “This string is definitely empty.”
+
+-Truthy and Falsy Assignment
+Eg
+let defaultName;
+if(username){
+  defaultName=username;
+}else{
+  defaultName='Stranger';
+}
+In a boolean condition, JavaScript assigns the truthy value to a variable if you use the || operator in your assignment:
+let defaultName=username||'Stranger';
+Because || or statements check the left-hand condition first, the variable defaultName will be assigned the actual value of username if is truthy, and it will be assigned the value of 'Stranger' if username is falsy. This concept is also referred to as short-circuit evaluation.
+Eg
+1.
+Let's use short-circuit evaluation to assign a value to writingUtensil. Do not edit toolyet, we'll return to tool in the next step.
+Assign to writingUtensil the value of tooland if tool is falsy, assign a default value of 'pen'.
+2.
+Notice that text 'The pen is mightier than the sword' logged to the console. Which means the value of writingUtensil is 'pen'.
+What if we reassign the value of tool to 'marker'. Let's see what happens to the value of writingUtensil.
+let tool = '';
+
+tool = 'pen';
+
+// Use short circuit evaluation to assign writingUtensil variable below:
+let writingUtensil = tool || 'pen';
+
+console.log(`The ${writingUtensil} is mightier than the sword.`);
+
+//print the tool is mightier than the sword
+//if reassign the value of tool to 'marker',, tool=’marker’, it print “The marker is mightier than the sword.”
+
+-Ternary Operator
+
+let isNightTime = true;
+
+if (isNightTime) {
+  console.log('Turn on the lights!');
+} else {
+  console.log('Turn off the lights!');
+}
+n 
+Same as
+
+same name is Natalia. My favorite city is Mexico Cit
+isNightTime?console.log(‘Turn on the light!’):console.log(‘Turn off the light!’);
+In the example above:
+The condition, isNightTime, is provided before the ?.
+Two expressions follow the ? and are separated by a colon :.
+If the condition evaluates to true, the first expression executes.
+If the condition evaluates to false, the second expression executes.
+
+
+Eg
+let isLocked = false;
+
+isLocked ? console.log('You will need a key to open the door.') : console.log('You will not need a key to open the door.');
+
+let isCorrect = true;
+
+isCorrect ? console.log('Correct!') : console.log('Incorrect!');
+
+let favoritePhrase = 'Love That!';
+
+favoritePhrase === 'Love That!' ? console.log('I love that!') : console.log("I don't love that!");
+//print 'You will not need a key to open the door.'
+'Correct!''I love that!'
+
+-Else If Statements
+The else if statement allows for more than two possible outcomes
+The else if statement always comes after the ifstatement and before the else statement.
+Eg
+let stopLight='yellow';
+if(stopLight==='red'){
+  console.log('Stop!');
+}esle if(stopLight==='yellow'){
+  console.log('Slow down!');
+}else if(stopLihgt==='green'){
+  console.log('Go!');
+}
+else{
+  console.log('Caution,unknown!');
+}
+
+Eg
+let season = 'summer';
+
+if (season === 'spring') {
+  console.log('It\'s spring! The trees are budding!');
+} else if(season === 'winter') {
+  console.log('It\'s winter! Everything is covered in snow.');
+} else if(season === 'fall') {
+  console.log('It\'s fall! Leaves are falling!');
+} else if(season === 'summer') {
+  console.log('It\'s sunny and warm because it\'s summer!');
+} else {
+  console.log('Invalid season.');
+}
+//print “It\'s sunny and warm because it\'s summer!”
+
+-The switch keyword
+In programming, we often find ourselves needing to check multiple values and handling each of them differently. For example:
+let groceryItem='mango';
+if(groceryItem==='apple'){
+  console.log('Apple is $1');
+}else if(groceryItem==='mango'){
+  console.log('Mango is $2');
+}else{
+  console.log('Invaild item');
+}
+In the code above, we have a series of conditions checking for a value that matches a groceryItemvariable. Our code works fine, but imagine if we needed to check 100 different values! Having to write that many else if statements sounds like a pain!
+A switch statement provides an alternative syntax that is easier to read and write. A switch statement looks like this:
+let groceryItem='papaya';
+switch(groceryItem)
+{
+  case 'tomato':
+  console.log('Tomato is $1');
+  break;
+  case 'lime':
+  console.log('Lime is $2');
+  break;
+  case 'papaya':
+  console.log('Papaya is $3');
+  break;
+  default:
+  console.log('Invalid item');
+  break;
+}
+//print “Papaya is $3”
+he switch keyword initiates the statement and is followed by ( ... ), which contains the value that each case will compare. In the example, the value or expression of the switch statement is groceryItem.
+Inside the block, { ... }, there are multiple cases. The case keyword checks if the expression matches the specified value that comes after it. The value following the first case is 'tomato'. If the value of groceryItem equalled 'tomato', that case's console.log() would run.
+The value of groceryItem is 'papaya', so the third case runs— Papayas are $1.29 is logged to the console.
+The break keyword tells the computer to exit the block and not execute any more code or check any other cases inside the code block. Note: Without the break keyword at the end of each case, the program would execute the code for all matching cases and the default code as well. This behavior is different from if/else conditional statements which execute only one block of code.
+At the end of each switch statement, there is a default statement. If none of the cases are true, then the code in the default statement will run.
+Eg
+let athleteFinalPosition = 'first place';
+switch(athleteFinalPosition)
+  {
+    case 'first place':
+      console.log('You get the gold medal!');
+      break;
+    case 'second place':
+      console.log('You get the silver medal!');
+      break;
+    case 'third place':
+      console.log('You get the bronze medal!');
+      break;
+    default:
+      console.log('No medal awarded.');
+      break;
+  }
+//print “You get the gold medal!”
+
+-Review
+Way to go! Here are some of the major concepts for conditionals:
+An if statement checks a condition and will execute a task if that condition evaluates to true.
+if...else statements make binary decisions and execute different code blocks based on a provided condition.
+We can add more conditions using else ifstatements.
+Comparison operators, including <, >, <=, >=, ===, and !== can compare two values.
+The logical and operator, &&, or "and", checks if both provided expressions are truthy.
+The logical operator ||, or "or", checks if either provided expression is truthy.
+The bang operator, !, switches the truthiness and falsiness of a value.
+The ternary operator is shorthand to simplify concise if...else statements.
+A switch statement can be used to simplify the process of writing multiple else if statements. The break keyword stops the remaining cases from being checked and executed in a switchstatement.
+
+
+-New chapter: function
+Chapter1
+-eg
+Const width=8;
+Const height=6;
+Const area=width*height;
+console.log(area);
+//output 48
+Function Declarations
+
+Eg
+console.log('greetWorld'());//output: Hello,World!
+function greetWorld(){
+  console.log('Hello,World!');
+}
+Eg
+function getReminder() {
+  console.log('Water the plants.');
+}
+
+function greetInSpanish() {
+  console.log('Buenas Tardes.');
+Eg
+function sayThanks() {
+  console.log('Thank you for your purchase! We appreciate your business.');
+}
+
+sayThanks();
+sayThanks();
+sayThanks();
+
+-Parameters and Arguments
+
+ The values that are passed to the function when it is called are called arguments. 
+
+
+Eg
+function sayThanks(name) {
+  console.log('Thank you for your purchase ' + name + '! We appreciate your business.');
+}
+
+sayThanks('Cole');
+//output :Thank you for your purchase Cole!We appreciate your business.
+
+-Calling a Function
+-Default Parameters
+Eg
+function greeting(name='stranger'){
+  console.log('Hello,${name}!');
+}
+greeting('Ncik');//output:Hello,Nick!
+greeting(); //output: Hello, stranger!
+Eg
+function makeShoppingList(item1 = 'milk', item2 = 'bread', item3 = 'eggs'){
+  console.log(`Remember to buy ${item1}`);
+  console.log(`Remember to buy ${item2}`);
+  console.log(`Remember to buy ${item3}`);
+}
+
+-Return
+Eg
+function rectangleArea(width,height){
+  let area=width * height
+}
+console.log(rectangleArea(5,7));
+//prints undefined
+In fact, the function worked fine, and the computer did calculate the area as 35, but we didn't capture it. So how can we do that? With the keyword return!
+
+Eg
+function rectangleArea(width,height){
+  if (width<0||height<0){
+    return 'You need positive integers to calculate area!';
+  }
+  return width * height;
+}
+If an argument for width or height is less than 0, then rectangleArea() will return 'You need positive integers to calculate area!'. The second return statement width * height will not run.
+Eg
+function monitorCount(rows, columns) {
+  return rows * columns;
+}
+
+const numOfMonitors = monitorCount(5, 4);
+
+console.log(numOfMonitors);
+//print 20
+-Helper Functions
+Eg
+function multiplyByNineFifths(number){
+  return number * (9/5);
+}
+function getFahrenheit(celsius){
+  return multiplyByNineFifths(celsius)+32;
+}
+getFahrenheit(15);
+//return 59
+getFahrenheit() is called and 15 is passed as an argument.
+The code block inside of getFahrenheit() calls multiplyByNineFifths() and passes 15 as an argument.
+multiplyByNineFifths() takes the argument of 15 for the number parameter.
+The code block inside of multiplyByNineFifths()function multiplies 15 by (9/5), which evaluates to 27.
+27 is returned back to the function call ingetFahrenheit().
+getFahrenheit() continues to execute. It adds 32to 27, which evaluates to 59.
+Finally, 59 is returned back to the function call getFahrenheit(15).
+Eg
+function monitorCount(rows, columns) {
+  return rows * columns;
+}
+
+function costOfMonitors(rows, columns) {
+ return monitorCount(rows, columns)  * 200;
+}
+
+const totalCost = costOfMonitors(5, 4);
+
+console.log(totalCost);
+//print 4000
+-Function Expressions
+
+Eg
+const plantNeedsWater = function(day) {
+  if(day === 'Wednesday'){
+    return true;
+  } else {
+    return false;
+  }
+};
+
+plantNeedsWater('Tuesday');
+
+console.log(plantNeedsWater('Tuesday'));
+//print false
+-Arrow Functions
+ES6 introduced arrow function syntax, a shorter way to write functions by using the special "fat arrow" () => notation.
+you first include the parameters inside the ( ) and then add an arrow => that points to the function body surrounded in { } like this:
+Eg
+const retangleArea=(width,height)=>{
+  let area= width * height;
+  return area
+}
+
+-eg
+const plantNeedsWater = (day) => {
+  if (day === 'Wednesday') {
+    return true;
+  } else {
+    return false;
+  }
+};
+-Concise Body Arrow Functions
+-Functions that take only a single parameter do not need that parameter to be enclosed in parentheses. However, if a function takes zero or multiple parameters, parentheses are required.
+
+-
+A function body composed of a single-line block does not need curly braces. Without the curly braces, whatever that line evaluates will be automatically returned. The contents of the block should immediately follow the arrow => and the return keyword can be removed. This is referred to as implicit return.
+
+Eg same function
+1.
+const squareNum=(num)=>{
+  return num * num;
+}
+2.
+const squareNum=num=>num * num;
+Eg
+const plantNeedsWater = day => day === 'Wednesday' ? true : false;
+
+-Review Functions
+Give yourself a pat on the back, you just navigated through functions!
+In this lesson, we covered some important concepts about functions:
+A function is a reusable block of code that groups together a sequence of statements to perform a specific task.
+A function declaration :
+
+A parameter is a named variable inside a function's block which will be assigned the value of the argument passed in when the function is invoked:
+
+To call a function in your code:
+
+ES6 introduces new ways of handling arbitrary parameters through default parameters which allow us to assign a default value to a parameter in case no argument is passed into the function.
+To return a value from a function, we use a return statement.
+To define a function using function expressions:
+
+To define a function using arrow function notation:
+Function definition can be made concise using concise arrow notation:
+
+
+It's good to be aware of the differences between function expressions, arrow functions, and function declarations. As you program more in JavaScript, you'll see a wide variety of how these function types are used.ame is Natalia. My favorite city is Mexico City.
+MyMy My name is Natalia. My favorite city is Mexico City.
+ name is Natalia. My favorite city is Mexico City.
+My name is Natalia. My favorite city is Mexico City.
+
+
+
+
+
+
+
+
+
