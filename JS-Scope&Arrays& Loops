@@ -1,0 +1,721 @@
+-Blocks and Scope
+A block of code could be a function, like this:
+Eg
+const logSkyColor=()=>{
+  let color='blue';
+  console.log(color); //blue
+}
+Observe the block in an if statement:
+if(dusk){
+  let color='pink';
+  console.log(color);
+}//pink
+
+-eg
+const city = 'New York City';
+
+const logCitySkyline = () => {
+  let skyscraper = 'Empire State Building';
+  return 'The stars over the ' + skyscraper + ' in ' + city;
+};
+
+console.log(logCitySkyline());
+//The stars over the Empire State Building in New York City.
+-Global Scope
+In global scope, variables are declared outside of blocks. These variables are called global variables
+const color='blue';
+const returnSkyColor=()=>{
+  return color;//blue
+};
+console.log(returnSkyColor());//blue
+
+Eg
+const satellite = 'The Moon';
+const galaxy = 'The Milky Way';
+const stars = 'North Star';
+
+const callMyNightSky = () => {
+	return 'Night Sky: '  +  satellite + ' , ' + stars + ', and ' + galaxy;
+};
+
+console.log(callMyNightSky());
+//NightSky: The moon, North stars, and The milky Way
+
+--another sample for learn
+// Try edit msg
+var msg = 'Hello world'
+var icon = ' <i class="fa fa-smile-o"></i>'
+
+console.log(msg)
+
+$('#msg').html(msg + icon)
+
+//Hello world@-(a smile face icon)
+
+-eg
+function b(){
+  console.log(myVar);
+}
+function a(){
+  var myVar=2;
+  b();
+}
+var myVar=1;
+a();
+//1
+
+Eg
+function a(){
+  function b(){
+    console.log(myVar);
+  }
+  var myVar=2;
+  b();
+}
+var myvar=1;
+a();
+//2
+
+function a(){
+  function b(){
+    console.log(myVar);
+  }
+    b();
+}
+var myVar=1;
+a();
+//1
+
+-Block Scope
+When a variable is defined inside a block, it is only accessible to the code within the curly braces {}. We say that variable has block scope because it is only accessible to the lines of code within that block.
+const logSkyColor=()=>{
+  let color='blue';
+  console.log(color);
+  };
+logSkyColor();//blue
+如果 console.log(color);//ReferenceError
+
+-eg
+const logVisibleLightWaves = () => {
+  const lightWaves = 'Moonlight';
+  console.log(lightWaves);
+};
+
+logVisibleLightWaves();
+
+//MoonLight
+
+-Scope Pollution
+Scope pollution is when we have too many global variables that exist in the global namespace, or when we reuse variables across different scopes. 
+Eg
+let num=50;
+const logNum=()=>{
+  num=100; // take note of this line of code
+  console.log(num);
+};
+logNum();//print 100
+console.log(num);// print 100
+//print 100
+ 100
+
+Eg
+const satellite = 'The Moon';
+const galaxy = 'The Milky Way';
+let stars = 'North Star';
+
+const callMyNightSky = () => {
+  stars = 'Sirius';
+	return 'Night Sky: ' + satellite + ', ' + stars + ', ' + galaxy;
+};
+console.log();
+console.log(stars);
+
+//North Star
+-Practice Good Scoping
+Tightly scoping your variables will greatly improve your code in several ways:
+It will make your code more legible since the blocks will organize your code into discrete sections.
+It makes your code more understandable since it clarifies which variables are associated with different parts of the program rather than having to keep track of them line after line!
+It's easier to maintain your code, since your code will be modular.
+It will save memory in your code because it will cease to exist after the block finishes running.
+const logSkyColor=()=>{
+  const dusk=true;
+  let color='blue';
+  if(dusk){
+    let color='pink';
+    console.log(color);//pink
+  }
+  console.log(color);//blue
+}
+console.log(color);//ReferenceError
+
+
+
+--eg
+const logVisibleLightWaves = () => {
+  let lightWaves = 'Moonlight';
+	let region = 'The Arctic';
+  // Add if statement here:
+  if (region === 'The Arctic'){
+    let lightWaves = 'Northern Lights';
+    console.log(lightWaves);
+  }
+  
+  console.log(lightWaves);
+};
+
+logVisibleLightWaves();
+//The Arctic
+   Moonlight
+
+Review: Scope
+In this lesson, you learned about scope and how it impacts the accessibility of different variables.
+Let's review the following terms:
+Scope is the idea in programming that some variables are accessible/inaccessible from other parts of the program.
+Blocks are statements that exist within curly braces {}.
+Global scope refers to the context within which variables are accessible to every part of the program.
+Global variables are variables that exist within global scope.
+Block scope refers to the context within which variables that are accessible only within the block they are defined.
+Local variables are variables that exist within block scope.
+Global namespace is the space in our code that contains globally scoped information.
+Scope pollution is when too many variables exist in a namespace or variable names are reused.
+As you continue your coding journey, remember to use best practices when declaring your variables! Scoping your variables tightly will ensure that your code has clean, organized, and modular logic.
+
+New chapter Arrays
+
+Organizing and storing data is a foundational concept of programming.
+Eg 
+let newYearsResolutions = ['Keep a journal', 'Take a falconry class', 'Learn to juggle'];
+
+console.log(newYearsResolutions);
+//print ['Keep a journal', 'Take a falconry class', 'Learn to juggle']
+
+-Create an Array
+arrays can store any data type(including strings, numbers, and booleans)
+
+-Accessing Elements
+Each element in an array has a numbered position known as its index. 
+Arrays in JavaScript are zero-indexed, meaning the positions start counting from 0 rather than 1. 
+
+Eg
+const hello='hello world';
+console.log(hello[6]);
+//output: w
+
+Eg
+const famousSayings = ['Fortune favors the brave.', 'A joke is a very serious thing.', 'Where there is love there is life.'];
+
+const listItem = famousSayings[0];
+
+console.log(famousSayings[2]);
+
+console.log(famousSayings[3]);
+// print : Where there is love there is life.
+	   Undefined
+
+-Update Elements
+Eg
+let seasons=['winter', 'spring', 'summer', 'fall'];
+seasons[3]='autumn';
+console.log(seasons);
+//output: [winter, spring, summer, autumn]
+
+Eg
+let groceryList = ['bread', 'tomatoes', 'milk'];
+groceryList[1]='avocados';
+console.log(groceryList);
+
+-Arrays with let and const
+Variables declared with the const keyword cannot be reassigned. However, elements in an array declared with const remain mutable. Meaning that we can change the contents of a const array, but cannot reassign a new array or a different value.
+
+Eg. see the little bit difference
+let condiments = ['Ketchup', 'Mustard', 'Soy Sauce', 'Sriracha'];
+
+const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
+
+condiments[0] = 'Mayo';
+
+console.log(condiments);
+
+condiments = ['Mayo'];
+
+utensils[3] = 'Spoon';
+
+console.log(utensils);
+//['Mayo', 'Mustard', 'Soy Sauce', 'Sriracha']
+   ['Fork', 'Knife', 'Chopsticks', 'Spoon']
+-The .length property
+We use dot notation, chaining a period with the property name to the array
+Eg
+const newYearResolution['keep a journal', 'Take a falconry class'];
+console.log(newYearResolution.length);
+//output: 2 because have 2 element
+-The .push() Method
+These methods are specifically called on arrays to make common tasks, like adding and removing elements, more straightforward.
+Eg
+const chores = ['wash dishes', 'do laundry', 'take out trash'];
+
+chores.push('clean floor', 'do gardenning');
+console.log(chores);
+// output:  [ "wash dishes", "do laundry", "take out trash", "clean floor", "do gardenning" ]
+
+-The .pop() Method
+Another array method, .pop(), removes the last item of an array.
+Eg
+const chores = ['wash dishes', 'do laundry', 'take out trash', 'cook dinner', 'mop floor'];
+
+chores.pop();
+
+console.log(chores)
+//output: ['wash dishes', 'do laundry', 'take out trash', 'cook dinner']
+
+Same as below
+Eg
+
+const chores = ['wash dishes', 'do laundry', 'take out trash', 'cook dinner', 'mop floor'];
+
+const removed=chores.pop();
+
+console.log(chores);
+//output: ['wash dishes', 'do laundry', 'take out trash', 'cook dinner']
+
+-More Array Methods
+There are many more array methods than just .push() and .pop(). You can read about all of the array methods that exist on the Mozilla Developer Network (MDN) array documentation.
+Some arrays methods that are available to JavaScript developers include: .join(), .slice(), .splice(), .shift(), .unshift(), and .concat() amongst many others.
+Eg
+var firstElement = array1.shift();
+
+console.log(array1);
+// expected output: Array [2, 3]
+
+console.log(firstElement);
+// expected output: 1
+
+Eg
+const groceryList = ['orange juice', 'bananas', 'coffee beans', 'brown rice', 'pasta', 'coconut oil', 'plantains'];
+
+groceryList.shift();
+
+console.log(groceryList);
+
+groceryList.unshift('popcorn');
+
+console.log(groceryList);
+
+console.log(groceryList.slice(1, 4));
+
+console.log(groceryList);
+
+const pastaIndex = groceryList.indexOf('pasta');
+
+console.log(pastaIndex);
+// [ "bananas", "coffee beans", "brown rice", "pasta", "coconut oil", "plantains" ]
+[ "popcorn", "bananas", "coffee beans", "brown rice", "pasta", "coconut oil", "plantains" ]
+[ "bananas", "coffee beans", "brown rice" ]
+[ "popcorn", "bananas", "coffee beans", "brown rice", "pasta", "coconut oil", "plantains" ]
+4
+
+
+-Arrays and Functions
+Take a look at the following example where we call .push() on an array inside a function. Recall, the .push() method mutates, or changes, an array:
+Eg
+const flowers=['peony', 'daffodil','marigold'];
+function addFlower(arr){
+  arr.push('lily');
+}
+addFlower(flowers);
+console.log(flowers);
+// Output: ['peony', 'daffodil', 'marigold', 'lily']
+
+
+
+Eg
+const concept = ['arrays', 'can', 'be', 'mutated'];
+
+function changeArr(arr){
+  arr[3] = 'MUTATED';
+}
+
+changeArr(concept);
+
+console.log(concept);
+
+const removeElement = newArr => {
+  newArr.pop()
+}
+
+removeElement(concept);
+
+console.log(concept);
+//[ "arrays", "can", "be", "MUTATED" ]
+[ "arrays", "can", "be" ]
+
+
+-Nested Arrays
+Earlier we mentioned that arrays can store other arrays
+
+Eg
+const nestedArr = [[1], [2, 3]];
+console.log(nestedArr[1]); // Output: [2, 3]
+
+
+eg
+const nestedArr = [[1], [2, 3]];
+
+console.log(nestedArr[1]); // Output: [2, 3]
+console.log(nestedArr[1][0]); // Output: 2
+
+Eg
+const numberClusters = [[1, 2], [3, 4], [5, 6]];
+
+const target = numberClusters[2][1];
+console.log(target);
+
+//output 6
+
+Review Arrays
+Nice work! In this lesson, we learned these concepts regarding arrays:
+Arrays are lists that store data in JavaScript.
+Arrays are created with brackets [].
+Each item inside of an array is at a numbered position, or index, starting at 0.
+We can access one item in an array using its index, with syntax like: myArray[0].
+We can also change an item in an array using its index, with syntax like myArray[0] = 'new string';
+Arrays have a length property, which allows you to see how many items are in an array.
+Arrays have their own methods, including .push() and .pop(), which add and remove items from an array, respectively.
+Arrays have many methods that perform different tasks, such as .slice() and .shift(), you can find documentation at the Mozilla Developer Network website.
+Some built-in methods are mutating, meaning the method will change the array, while others are not mutating. You can always check the documentation.
+Variables that contain arrays can be declared with let or const. Even when declared with const, arrays are still mutable. However, a variable declared with const cannot be reassigned.
+Arrays mutated inside of a function will keep that change even outside the function.
+Arrays can be nested inside other arrays.
+To access elements in nested arrays chain indices using bracket notation.
+Learning how to work with and manipulate arrays will help you work with chunks of data!
+
+
+
+
+-New chapter Loops
+
+A loop is a programming tool that repeats a set of instructions until a specified condition, called a stopping condition is reached.
+-Repeating Tasks Manually
+
+-
+Eg
+const vacationSpots = ['Mozambique', 'Thailand', 'Bolivia'];
+
+console.log(vacationSpots[0]);
+console.log(vacationSpots[1]);
+console.log(vacationSpots[2]);
+//output: Mozambique
+ 	     Thailand
+     Bolivia
+
+-The For Loop
+A for loop contains three expressions separated by ; inside the parentheses:
+an initialization starts the loop and can also be used to declare the iterator variable.
+a stopping condition is the condition that the iterator variable is evaluated against— if the condition evaluates to true the code block will run, and if it evaluates to false the code will stop.
+an iteration statement is used to update the iterator variable on each loop.
+Eg
+for (let counter=0; counter<4; counter++){
+  console.log(counter);
+}
+
+//0
+1
+2
+3
+
+-Looping in Reverse
+
+// The loop below loops from 0 to 3. Edit it to loop backwards from 3 to 0
+for (let counter = 3; counter >= 0; counter--){
+  console.log(counter);
+}
+//3
+2
+1
+0
+-Looping through Arrays
+const animals=['Grizzly Bear', 'Sloth', 'Sea Lion'];
+for(let i=0; i<animals.length; i++){
+  console.log(animals[i]);
+}
+g(animals[i]);
+}
+//Grizzly Bear 
+Sloth 
+Sea Lion
+
+
+Eg
+const vacationSpots = ['Bali', 'Paris', 'Tulum'];
+for (let i = 0; i < vacationSpots.length; i++ ){
+  console.log('I would love to visit ' + vacationSpots[i]);
+}
+//I would love to visit Bali
+I would love to visit Paris
+I would love to visit Tulum
+
+-Nested Loops
+Eg
+const myArray=[6,19,20];
+const youArray=[19,81,2];
+for(let i=0; i<myArray.length; i++){
+  for(let j=0; j<yourArray.length; j++){
+    if(myArray[i]===yourArray[j]){
+      console.log('Both loop have the number:'+ yourArray[j])
+    }
+  }
+}
+
+Doesnt work
+Eg
+let bobsFollowers = ['Joe', 'Marta', 'Sam', 'Erin'];
+let tinasFollowers = ['Sam', 'Marta', 'Elle'];
+let mutualFollowers = [];
+
+for(let i=0; i<bobsFollowers.length; i++){
+  for(let j=0; j<tinasFollowers.length; j++){
+    if(bobsFollowers[i]===tinasFollowers[j]){
+      mutualFollowers.push(bobsFollowers[i]);
+    }
+  }
+  
+}
+ Doesnt work
+
+-The While Loop
+// A for loop that prints 1, 2, and 3
+for (let counterOne = 1; counterOne < 4; counterOne++){
+  console.log(counterOne);
+}
+
+// A while loop that prints 1, 2, and 3
+let counterTwo = 1;
+while (counterTwo < 4) {
+  console.log(counterTwo);
+  counterTwo++;
+}
+What would happen if we didn't increment counterTwo inside our block? If we didn't include this, counterTwo would always have its initial value, 0. That would mean the testing condition counterTwo < 4 would always evaluate to true and our loop would never stop running! This is called an infinite loop and it's something we always want to avoid. Infinite loops can take up all of your computer's processing power potentially freezing your computer.
+
+-eg
+const cards = ['diamond', 'spade', 'heart', 'club'];
+
+// Write your code below
+let currentCard;
+
+while ( currentCard != 'spade') {
+  currentCard = cards[Math.floor(Math.random() * 4)];
+	console.log(currentCard);
+}
+
+//the result is different each time
+
+-Do...While Statements
+
+In some cases, you want a piece of code to run at least once and then loop based on a specific condition after its initial run. This is where the do...while statement comes in.
+
+Eg
+let countString='';
+let i=0;
+do{
+  countString=countString+i; i++
+} while(i<5);
+console.log(countString);
+
+//01234
+
+Note that the while and do...while loop are different! Unlike the while loop, do...while will run at least once whether or not the condition evaluates to true.
+const firstMessage = 'I will print!';
+const secondMessage = 'I will not print!'; 
+
+// A do while with a stopping condition that evaluates to false
+do {
+ console.log(firstMessage)
+} while (true === false);
+
+// A while loop with a stopping condition that evaluates to false
+while (true === false){
+  console.log(secondMessage)
+};
+//ouput : I will print
+
+Eg
+1.
+We'd like a program to simulate part of the cake-baking process. Depending on the recipe, a different number of cups of sugar is required. Create the variable cupsOfSugarNeeded, and assign it a number value of your choosing. The cups of sugar must be added to the batter one at a time. Declare the variable cupsAdded and assign it the value 0.
+2.
+We have a sweet tooth, so we want to add at least one cup of sugar to the batter even if the value of cupsOfSugarNeeded is 0. Create a do...while loop which increments cupsAdded by one while cupsAdded is less than cupsOfSugarNeeded.
+
+let cupsOfSugarNeeded = 3;
+let cupsAdded = 0;
+
+do {
+ cupsAdded++
+} while (cupsAdded < cupsOfSugarNeeded);
+
+-The break Keyword
+The break keyword allows programs to “break” out of the loop from within the loop's block.
+Eg
+for (let i = 0; i < 99; i++) {
+  if (i > 2 ) {
+    break;
+  }
+  console.log('Banana.');
+}
+
+console.log('Orange you glad I broke out the loop!');
+
+
+//Banana.
+Banana.
+Banana.
+Orange you glad I broke out the loop!
+
+Question
+1.
+Log each element from rapperArray in a forloop with the iterator variable i.
+Stuck? Get a hint
+2.
+After the for loop, log the string "And if you don't know, now you know." to the console. Note: since there's a single quote character, ', in our string, we can use double quotes around the string to make sure character prints.
+3.
+Add a break inside your loop's block that breaks out of the loop if the element at the current index in the rapperArray is 'Notorious B.I.G.'.
+const rapperArray = ["Lil' Kim", "Jay-Z", "Notorious B.I.G.", "Tupac"];
+
+// Write you code below
+for (let i = 0; i < rapperArray.length; i++){
+  console.log(rapperArray[i]);
+  if (rapperArray[i] === 'Notorious B.I.G.'){
+    break;
+  }
+}
+
+console.log("And if you don't know, now you know.");
+
+//Lil' Kim
+Jay-Z
+Notorious B.I.G.
+And if you don't know, now you know.
+
+
+-Review
+Great job! In this lesson, we learned how to write cleaner code with loops. You now know:
+Loops perform repetitive actions so we don’t have to code that process manually every time.
+How to write for loops with an iterator variable that increments or decrements
+How to use a for loop to iterate through an array
+A nested for loop is a loop inside another loop
+while loops allow for different types of stopping conditions
+Stopping conditions are crucial for avoiding infinite loops.
+do...while loops run code at least once— only checking the stopping condition after the first execution
+The break keyword allows programs to leave a loop during the execution of its block
+
+
+-New chapter HIGHER-ORDER FUNCTIONS
+-Functions as Data
+Since functions are a type of object, they have properties such as .length and .name and methods such as .toString(). You can see more about the methods and properties of functions in the documentation.
+Eg
+const announceThatIAmDoingImportantWork = () => {
+    console.log("I’m doing very important work!");
+};
+const busy = announceThatIAmDoingImportantWork;
+
+busy(); // This function call barely takes any space!
+//I’m doing very important work!
+
+Eg
+const checkThatTwoPlusTwoEqualsFourAMillionTimes = () => {
+  for(let i = 1; i <= 1000000; i++) {
+    if ( (2 + 2) != 4) {
+      console.log('Something has gone very wrong :( ');
+    }
+  }
+};
+
+// Write your code below
+const is2p2 = checkThatTwoPlusTwoEqualsFourAMillionTimes;
+is2p2();
+console.log(is2p2.name);
+// output: checkThatTwoPlusTwoEqualsFourAMillionTimes
+
+-Functions as Parameters
+A higher-order function is a function that either accepts functions as parameters, returns a function, or both! We call the functions that get passed in as parameters and invoked callback functionsbecause they get called during the execution of the higher-order function.
+Eg
+const timeFuncRuntime = funcParameter => {
+   let t1 = Date.now();
+   funcParameter();
+   let t2 = Date.now();
+   return t2 - t1;
+}
+
+const addOneToOne = () => 1 + 1;
+
+timeFuncRuntime(addOneToOne);
+This higher-order function could be used with any callback function which makes it a potentially powerful piece of code.
+We then invoked timeFuncRuntime() first with the addOneToOne() function - note how we passed in addOneToOne and did not invoke it.
+timeFuncRuntime(() => {
+  for (let i = 10; i>0; i--){
+    console.log(i);
+  }
+});
+Doesnt work
+In this example, we invoked timeFuncRuntime() with an anonymous function that counts backwards from 10. Anonymous functions can be arguments too!
+Eg
+const checkThatTwoPlusTwoEqualsFourAMillionTimes = () => {
+  for(let i = 1; i <= 1000000; i++) {
+    if ( (2 + 2) != 4) {
+      console.log('Something has gone very wrong :( ');
+    }
+  }
+};
+
+const addTwo = num => num + 2;
+
+const timeFuncRuntime = funcParameter => {
+  let t1 = Date.now();
+  funcParameter();
+  let t2 = Date.now();
+  return t2 - t1;
+};
+
+// Write your code below
+
+const time2p2 = timeFuncRuntime(checkThatTwoPlusTwoEqualsFourAMillionTimes);
+
+const checkConsistentOutput = (func, val) => {
+    let firstTry = func(val);
+    let secondTry = func(val);
+    if (firstTry === secondTry) {
+        return firstTry
+    } else {
+        return 'This function returned inconsistent results'
+    }
+};
+
+checkConsistentOutput(addTwo, 10);
+Dont understand
+Review
+Abstraction allows us to write complicated code in a way that's easy to reuse, debug, and understand for human readers
+We can work with functions the same way we would any other type of data including reassigning them to new variables
+JavaScript functions are first-class objects, so they have properties and methods like any object
+Functions can be passed into other functions as parameters
+A higher-order function is a function that either accepts functions as parameters, returns a function, or both
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
