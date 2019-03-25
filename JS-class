@@ -1,0 +1,588 @@
+-new chapter ‘class’
+JavaScript is an object-oriented programming (OOP) 
+Classes are a tool that developers use to quickly produce similar objects.
+
+Example 1
+let halley = {
+  _name: 'Halley',
+  _behavior: 0,
+
+  get name() {
+    return this._name;
+  },
+
+  get behavior() {
+    return this._behavior;
+  },
+
+  incrementBehavior() {
+    this._behavior++;
+  }
+}
+
+Example 2, try to compare 2 examples
+class Dog {
+  constructor(name) {
+    this._name = name;
+    this._behavior = 0;
+  }
+
+  get name() {
+    return this._name;
+  }
+  get behavior() {
+    return this._behavior;
+  }   
+
+  incrementBehavior() {
+    this._behavior ++;
+  }
+}
+
+const halley = new Dog('Halley');
+console.log(halley.name); // Print name value to console
+console.log(halley.behavior); // Print behavior value to console
+halley.incrementBehavior(); // Add one to behavior
+console.log(halley.name); // Print name value to console
+console.log(halley.behavior); // Print behavior value to console
+//
+Halley
+0
+Halley
+1
+
+
+-Constructor
+Although you may see similarities between class and object syntax, there is one important method that sets them apart. It's called the constructor method. JavaScript calls the constructor() method every time it creates a new instance of a class.
+class Dog{
+  constructor(name){
+    this.name=name;
+    this.behavior=0;
+  }
+}
+Dog is the name of our class. By convention, we capitalize and CamelCase class names.
+JavaScript will invoke the constructor() method every time we create a new instance of our Dogclass.
+This constructor() method accepts one argument, name.
+Eg
+class Surgeon{
+  constructor(name, department){
+    this.name = name;
+    this.department = department;
+    
+  }
+}
+
+
+-Instance
+An instance is an object that contains the property names and methods of a class, but with unique property values.
+Eg
+class Dog {
+  constructor(name) {
+    this.name = name;
+    this.behavior = 0;
+  } 
+}
+
+const halley = new Dog('Halley'); // Create new Dog instance
+console.log(halley.name); // Log the name value saved to halley
+// Output: 'Halley'
+
+
+Eg
+class Surgeon {
+  constructor(name, department) {
+    this.name = name;
+    this.department = department;
+  }
+}
+
+const surgeonCurry = new Surgeon('Curry', 'Cardiovascular');
+const surgeonDurant = new Surgeon('Durant', 'Orthopedics');
+console.log(surgeonCurry);
+console.log(surgeonDurant);
+
+//print
+{ "name": "Curry", "department": "Cardiovascular" }
+{ "name": "Durant", "department": "Orthopedics" }
+
+
+-Methods
+we will add getters and a method to bring our class to life.
+Class method and getter syntax is the same as it is for objects except you can not include commas between methods.
+
+class Dog {
+  constructor(name) {
+    this._name = name;
+    this._behavior = 0;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  get behavior() {
+    return this._behavior;
+  }
+
+  incrementBehavior() {
+    this._behavior++;
+  }
+}
+
+Question
+
+6. last step
+Under the remainingVacationDays getter, create a method called takeVacationDaysthat accepts one argument named daysOff.
+Inside of the method, subtract daysOff from the number saved to _remainingVacationDays. Set _remainingVacationDays to the result.
+
+Eg
+class Surgeon {
+  constructor(name, department) {
+    this._name = name;
+    this._department = department;
+    this._remainingVacationDays = 20;
+  }
+  
+  get name() {
+    return this._name;
+  }
+  
+  get department() {
+    return this._department;
+  }
+  
+  get remainingVacationDays() {
+    return this._remainingVacationDays;
+  }
+  
+  takeVacationDays(daysOff) {
+    this._remainingVacationDays -= daysOff;
+  }
+}
+
+const surgeonCurry = new Surgeon('Curry', 'Cardiovascular');
+const surgeonDurant = new Surgeon('Durant', 'Orthopedics');
+console.log(surgeonCurry);
+console.log(surgeonDurant);
+
+//print:
+{ "_name": "Curry", "_department": "Cardiovascular", "_remainingVacationDays": 20 }
+{ "_name": "Durant", "_department": "Orthopedics", "_remainingVacationDays": 20 }
+
+-Method Calls
+Eg
+class Dog {
+  constructor(name) {
+    this._name = name;
+    this._behavior = 0;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  get behavior() {
+    return this._behavior;
+  }   
+
+  incrementBehavior() {
+    this._behavior++;
+  }
+}
+
+const halley = new Dog('Halley');
+let nikko = new Dog('Nikko'); // Create dog named Nikko
+nikko.incrementBehavior(); // Add 1 to nikko instance's behavior
+let bradford = new Dog('Bradford'); // Create dog name Bradford
+console.log(nikko.behavior); // Logs 1 to the console
+console.log(bradford.behavior); // Logs 0 to the console
+
+//print 1
+0
+
+Another good example
+class Surgeon {
+  constructor(name, department) {
+    this._name = name;
+    this._department = department;
+    this._remainingVacationDays = 20;
+  }
+  
+  get name() {
+    return this._name;
+  }
+  
+  get department() {
+    return this._department;
+  }
+  
+  get remainingVacationDays() {
+    return this._remainingVacationDays;
+  }
+  
+  takeVacationDays(daysOff) {
+    this._remainingVacationDays -= daysOff;
+  }
+}
+
+const surgeonCurry = new Surgeon('Curry', 'Cardiovascular');
+const surgeonDurant = new Surgeon('Durant', 'Orthopedics');
+
+console.log(surgeonCurry.name);
+surgeonCurry.takeVacationDays(3);
+console.log(surgeonCurry.remainingVacationDays);
+//print: Curry 17
+
+
+
+-Inheritance I
+Eg
+class Cat {
+  constructor(name, usesLitter) {
+    this._name = name;
+    this._usesLitter = usesLitter;
+    this._behavior = 0;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  get usesLitter() {
+    return this._usesLitter;
+  }
+
+  get behavior() {
+    return this._behavior;
+  }  
+
+  incrementBehavior() {
+    this._behavior++;
+  }
+}
+
+The Cat class also contains one additional property (_usesLitter), that holds a boolean value to indicate whether a cat can use their litter box.
+With inheritance, you can create a parent class (also known as a superclass) with properties and methods that multiple child classes (also known as subclasses) share. The child classes inherit the properties and methods from their parent class.
+Let's abstract the shared properties and methods from our Cat and Dog classes into a parent class called Animal.
+
+class Animal {
+  constructor(name) {
+    this._name = name;
+    this._behavior = 0;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  get behavior() {
+    return this._behavior;
+  }   
+
+  incrementBehavior() {
+    this._behavior++;
+  }
+} 
+
+-Inheritance II
+Eg
+class HospitalEmployee {
+  constructor(name) {
+    this._name = name;
+    this._remainingVacationDays = 20;
+  }
+  
+  get name() {
+    return this._name;
+  }
+
+  get remainingVacationDays() {
+    return this._remainingVacationDays;
+  }
+  
+  takeVacationDays(daysOff) {
+    this._remainingVacationDays -= daysOff;
+  }
+}
+
+-Inheritance III
+Now that we have these shared properties and methods in the parent Animal class, we can extend them to the subclass, Cat.
+Eg
+class Cat extends Animal {
+  constructor(name, usesLitter) {
+    super(name);
+    this._usesLitter = usesLitter;
+  }
+}
+The extends keyword makes the methods of the animal class available inside the cat class.
+The constructor, called when you create a new Cat object, accepts two arguments, name and usesLitter.
+The super keyword calls the constructor of the parent class. In this case, super(name) passes the name argument of the Cat class to the constructor of the Animal class. When the Animal constructor runs, it sets this._name = name; for new Cat instances.
+_usesLitter is a new property that is unique to the Cat class, so we set it in the Cat constructor.
+Notice, we call super on the first line of our constructor(), then set the usesLitter property on the second line. In a constructor(), you must always call the super method before you can use the thiskeyword — if you do not, JavaScript will throw a reference error. To avoid reference errors, it is best practice to call super on the first line of subclass constructors.
+Below, we create a new Cat instance and call its name with the same syntax as we did with the Dogclass:
+
+const bryceCat = new Cat('Bryce', false); 
+console.log(bryceCat._name); // output: Bryce
+
+
+Eg
+class HospitalEmployee {
+  constructor(name) {
+    this._name = name;
+    this._remainingVacationDays = 20;
+  }
+  
+  get name() {
+    return this._name;
+  }
+  
+  get remainingVacationDays() {
+    return this._remainingVacationDays;
+  }
+  
+  takeVacationDays(daysOff) {
+    this._remainingVacationDays -= daysOff;
+  }
+}
+
+class Nurse extends HospitalEmployee {
+  constructor(name, certifications) {
+    super(name);
+    this._certifications = certifications;
+  }
+}
+
+const nurseOlynyk = new Nurse('Olynyk', ['Trauma', 'Pediatrics']);
+const nurseOlynyk = new Nurse('Olynyk', ['Trauma', 'Pediatrics']);
+
+
+-Inheritance IV
+When we call extends in a class declaration, all of the parent methods are available to the child class.
+Eg
+class Animal {
+  constructor(name) {
+    this._name = name;
+    this._behavior = 0;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  get behavior() {
+    return this._behavior;
+  }
+
+  incrementBehavior() {
+    this._behavior++;
+  }
+} 
+
+
+class Cat extends Animal {
+  constructor(name, usesLitter) {
+    super(name);
+    this._usesLitter = usesLitter;
+  }
+}
+
+const bryceCat = new Cat('Bryce', false);
+console.log(bryceCat.name);
+bryceCat.incrementBehavior(); // Call .incrementBehavior() on Cat instance 
+console.log(bryceCat.behavior); // Log value saved to behavior
+
+//print: Bryce 1
+
+
+Another example
+class HospitalEmployee {
+  constructor(name) {
+    this._name = name;
+    this._remainingVacationDays = 20;
+  }
+  
+  get name() {
+    return this._name;
+  }
+  
+  get remainingVacationDays() {
+    return this._remainingVacationDays;
+  }
+  
+  takeVacationDays(daysOff) {
+    this._remainingVacationDays -= daysOff;
+  }
+}
+
+class Nurse extends HospitalEmployee {
+ constructor(name, certifications) {
+   super(name);
+   this._certifications = certifications;
+ } 
+}
+
+const nurseOlynyk = new Nurse('Olynyk', ['Trauma','Pediatrics']);
+
+nurseOlynyk.takeVacationDays(5);
+console.log(nurseOlynyk.remainingVacationDays);
+// print 15
+
+-Inheritance V
+In addition to the inherited features, child classes can contain their own properties, getters, setters, and methods.
+Below, we will add a usesLitter getter. The syntax for creating getters, setters, and methods is the same as it is in any other class.
+Question
+1.
+Use the properties and methods below to help you complete the tasks that follow.
+Nurse
+Properties: _name, _remainingVacationDays (set to 20inside the constructor()), _certifications
+Methods: .takeVacationDays(), .addCertification()
+Under the Nurse constructor(), add a getter that returns the value saved to the Nurse instance's _certifications.
+2.
+Add a method called addCertification under the certifications getter.
+The method should accept one input (newCertification). Inside the method, use the push method to add the newCertification value to the nurse's certifications array.
+Stuck? Get a hint
+3.
+At the bottom of main.js call the .addCertification() method on nurseOlynyk with a parameter of 'Genetics'.
+4.
+Log the value saved to the certificationsproperty of nurseOlynyk.
+Answer
+class HospitalEmployee {
+  constructor(name) {
+    this._name = name;
+    this._remainingVacationDays = 20;
+  }
+  
+  get name() {
+    return this._name;
+  }
+  
+  get remainingVacationDays() {
+    return this._remainingVacationDays;
+  }
+  
+  takeVacationDays(daysOff) {
+    this._remainingVacationDays -= daysOff;
+  }
+}
+
+class Nurse extends HospitalEmployee {
+  constructor(name, certifications) {
+    super(name);
+    this._certifications = certifications;
+  } 
+  
+  get certifications() {
+    return this._certifications;
+  }
+  
+  addCertification(newCertification) {
+    this._certifications.push(newCertification);
+  }
+}
+
+const nurseOlynyk = new Nurse('Olynyk', ['Trauma','Pediatrics']);
+nurseOlynyk.takeVacationDays(5);
+console.log(nurseOlynyk.remainingVacationDays);
+nurseOlynyk.addCertification('Genetics');
+console.log(nurseOlynyk.certifications);
+//print : 15
+[ "Trauma", "Pediatrics", "Genetics" ]
+
+-Static Methods
+Sometimes you will want a class to have methods that aren't available in individual instances, but that you can call directly from the class.
+Take the Date class, for example — you can both create Date instances to represent whatever date you want, and call static methods, like Date.now() which returns the current date, directly from the class. The .now() method is static, so you can call it directly from the class, but not from an instance of the class.
+Let's see how to use the static keyword to create a static method called generateName method in our Animal class:
+class Animal{
+  constructor(name){
+    this._name=name;
+    this._behavior=behavior;
+  }
+  static generateName(){
+    const names=['Angel', 'Spike', 'Buffy', 'Willow', 'Tara'];
+    const randomNumber=Math.floor(Math.random()*5);
+    return names[randomNumber];
+  }
+}
+console.log(Animal.generateName());//returns a name
+//You cannot access the .generateName() method from instances of the Animal class or instances of its subclasses (See below).
+const tyson = new Animal('tyson');
+tyson.generateName();//typeError
+//The example above will result in an error, because you cannot call static methods (.generateName()) on an instance (tyson).
+
+Another example
+class HospitalEmployee {
+  constructor(name) {
+    this._name = name;
+    this._remainingVacationDays = 20;
+  }
+  
+  get name() {
+    return this._name;
+  }
+  
+  get remainingVacationDays() {
+    return this._remainingVacationDays;
+  }
+  
+  takeVacationDays(daysOff) {
+    this._remainingVacationDays -= daysOff;
+  }
+  
+  static generatePassword() {
+    return Math.floor(Math.random() * 10000);
+  }
+}
+
+class Nurse extends HospitalEmployee {
+  constructor(name, certifications) {
+    super(name);
+    this._certifications = certifications;
+  } 
+  
+  get certifications() {
+    return this._certifications;
+  }
+  
+  addCertification(newCertification) {
+    this.certifications.push(newCertification);
+  }
+}
+
+const nurseOlynyk = new Nurse('Olynyk', ['Trauma','Pediatrics']);
+nurseOlynyk.takeVacationDays(5);
+console.log(nurseOlynyk.remainingVacationDays);
+nurseOlynyk.addCertification('Genetics');
+console.log(nurseOlynyk.certifications);
+
+-Review: Classes
+Classes are templates for objects.
+Javascript calls a constructor method when we create a new instance of a class.
+Inheritance is when we create a parent class with properties and methods that we can extend to child classes.
+We use the extends keyword to create a subclass.
+The super keyword calls the constructor() of a parent class.
+Static methods are called on the class, but not on instances of the class.
+In completing this lesson, you've taken one step closer to writing efficient, production-level JavaScript. Good luck as you continue to develop your skills and move into intermediate-level concepts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
