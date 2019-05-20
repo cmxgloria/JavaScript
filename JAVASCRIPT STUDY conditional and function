@@ -368,7 +368,7 @@ console.log(`The ${writingUtensil} is mightier than the sword.`);
 //if reassign the value of tool to 'marker',, tool=’marker’, it print “The marker is mightier than the sword.”
 
 -Ternary Operator
-
+```
 let isNightTime = true;
 
 if (isNightTime) {
@@ -376,7 +376,7 @@ if (isNightTime) {
 } else {
   console.log('Turn off the lights!');
 }
-n 
+```
 Same as
 
 same name is Natalia. My favorite city is Mexico Cit
@@ -389,7 +389,7 @@ If the condition evaluates to false, the second expression executes.
 
 
 Eg
-let isLocked = false;
+```let isLocked = false;
 
 isLocked ? console.log('You will need a key to open the door.') : console.log('You will not need a key to open the door.');
 
@@ -402,12 +402,12 @@ let favoritePhrase = 'Love That!';
 favoritePhrase === 'Love That!' ? console.log('I love that!') : console.log("I don't love that!");
 //print 'You will not need a key to open the door.'
 'Correct!''I love that!'
-
+```
 -Else If Statements
 The else if statement allows for more than two possible outcomes
 The else if statement always comes after the ifstatement and before the else statement.
 Eg
-let stopLight='yellow';
+```let stopLight='yellow';
 if(stopLight==='red'){
   console.log('Stop!');
 }esle if(stopLight==='yellow'){
@@ -418,8 +418,9 @@ if(stopLight==='red'){
 else{
   console.log('Caution,unknown!');
 }
-
+```
 Eg
+```
 let season = 'summer';
 
 if (season === 'spring') {
@@ -434,9 +435,10 @@ if (season === 'spring') {
   console.log('Invalid season.');
 }
 //print “It\'s sunny and warm because it\'s summer!”
-
+```
 -The switch keyword
 In programming, we often find ourselves needing to check multiple values and handling each of them differently. For example:
+```
 let groceryItem='mango';
 if(groceryItem==='apple'){
   console.log('Apple is $1');
@@ -445,9 +447,10 @@ if(groceryItem==='apple'){
 }else{
   console.log('Invaild item');
 }
+```
 In the code above, we have a series of conditions checking for a value that matches a groceryItemvariable. Our code works fine, but imagine if we needed to check 100 different values! Having to write that many else if statements sounds like a pain!
 A switch statement provides an alternative syntax that is easier to read and write. A switch statement looks like this:
-let groceryItem='papaya';
+```let groceryItem='papaya';
 switch(groceryItem)
 {
   case 'tomato':
@@ -464,12 +467,15 @@ switch(groceryItem)
   break;
 }
 //print “Papaya is $3”
+```
+
 he switch keyword initiates the statement and is followed by ( ... ), which contains the value that each case will compare. In the example, the value or expression of the switch statement is groceryItem.
 Inside the block, { ... }, there are multiple cases. The case keyword checks if the expression matches the specified value that comes after it. The value following the first case is 'tomato'. If the value of groceryItem equalled 'tomato', that case's console.log() would run.
 The value of groceryItem is 'papaya', so the third case runs— Papayas are $1.29 is logged to the console.
 The break keyword tells the computer to exit the block and not execute any more code or check any other cases inside the code block. Note: Without the break keyword at the end of each case, the program would execute the code for all matching cases and the default code as well. This behavior is different from if/else conditional statements which execute only one block of code.
 At the end of each switch statement, there is a default statement. If none of the cases are true, then the code in the default statement will run.
 Eg
+```
 let athleteFinalPosition = 'first place';
 switch(athleteFinalPosition)
   {
@@ -487,7 +493,7 @@ switch(athleteFinalPosition)
       break;
   }
 //print “You get the gold medal!”
-
+```
 -Review
 Way to go! Here are some of the major concepts for conditionals:
 An if statement checks a condition and will execute a task if that condition evaluates to true.
