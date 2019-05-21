@@ -1,7 +1,7 @@
 -Blocks and Scope
 A block of code could be a function, like this:
 Eg
-const logSkyColor=()=>{
+```const logSkyColor=()=>{
   let color='blue';
   console.log(color); //blue
 }
@@ -10,9 +10,10 @@ if(dusk){
   let color='pink';
   console.log(color);
 }//pink
-
+```
 -eg
-const city = 'New York City';
+const
+```city = 'New York City';
 
 const logCitySkyline = () => {
   let skyscraper = 'Empire State Building';
@@ -20,17 +21,17 @@ const logCitySkyline = () => {
 };
 
 console.log(logCitySkyline());
-//The stars over the Empire State Building in New York City.
+//The stars over the Empire State Building in New York City.```
 -Global Scope
 In global scope, variables are declared outside of blocks. These variables are called global variables
-const color='blue';
+```const color='blue';
 const returnSkyColor=()=>{
   return color;//blue
 };
 console.log(returnSkyColor());//blue
-
+```
 Eg
-const satellite = 'The Moon';
+```const satellite = 'The Moon';
 const galaxy = 'The Milky Way';
 const stars = 'North Star';
 
@@ -40,7 +41,7 @@ const callMyNightSky = () => {
 
 console.log(callMyNightSky());
 //NightSky: The moon, North stars, and The milky Way
-
+```
 --another sample for learn
 // Try edit msg
 var msg = 'Hello world'
@@ -108,7 +109,7 @@ logVisibleLightWaves();
 -Scope Pollution
 Scope pollution is when we have too many global variables that exist in the global namespace, or when we reuse variables across different scopes. 
 Eg
-let num=50;
+```let num=50;
 const logNum=()=>{
   num=100; // take note of this line of code
   console.log(num);
@@ -117,7 +118,8 @@ logNum();//print 100
 console.log(num);// print 100
 //print 100
  100
-
+```
+(remember if add let num=100, print 100 50 instead of 100 100) num=100; // take note of this line of code
 Eg
 const satellite = 'The Moon';
 const galaxy = 'The Milky Way';
