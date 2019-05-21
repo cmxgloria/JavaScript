@@ -502,13 +502,13 @@ What would happen if we didn't increment counterTwo inside our block? If we didn
 const cards = ['diamond', 'spade', 'heart', 'club'];
 
 // Write your code below
-let currentCard;
+```let currentCard;
 
 while ( currentCard != 'spade') {
   currentCard = cards[Math.floor(Math.random() * 4)];
 	console.log(currentCard);
 }
-
+```
 //the result is different each time
 
 -Do...While Statements
