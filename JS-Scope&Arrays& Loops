@@ -539,6 +539,9 @@ while (true === false){
   console.log(secondMessage)
 };
 //ouput : I will print
+// if do {
+ console.log(firstMessage)
+} while (true );---so the 'I will print' ulimited times.
 
 Eg
 1.
@@ -552,6 +555,8 @@ let cupsAdded = 0;
 do {
  cupsAdded++
 } while (cupsAdded < cupsOfSugarNeeded);
+console.log(cupsAdded);
+// print: 3
 
 -The break Keyword
 The break keyword allows programs to “break” out of the loop from within the loop's block.
