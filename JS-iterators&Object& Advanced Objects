@@ -461,7 +461,7 @@ const alienship={
 };
 alienship.invade();
 // print 'Come to our planet.'
-
+//
 (Object methods are invoked by appending the object's name with the dot operator followed by the method name and parentheses:)
 
 Eg
@@ -492,6 +492,7 @@ We accessed the back-up object by appending ['back-up'].
 The back-up object has a battery property, accessed with .battery which returned the value stored there: 'Lithium'
 
 Eg
+```
 let spaceship = {
   passengers: [{name: 'Space Dog'}], 
   telescope: {
@@ -527,7 +528,7 @@ let firstPassenger = spaceship.passengers[0];
 console.log(spaceship);
 console.log(capFave);
 console.log(firstPassenger);
-
+```
 //{ "passengers": [ { "name": "Space Dog" } ], "telescope": { "yearBuilt": 2018, "model": "91031-XLT", "focalLength": 2032 }, "crew": { "captain": { "name": "Sandra", "degree": "Computer Engineering", "favorite foods": [ "cookies", "cakes", "candy", "spinach" ] } }, "engine": { "model": "Nimbus2000" }, "nanoelectronics": { "computer": { "terabytes": 100, "monitors": "HD" }, "backup": { "battery": "Lithium", "terabytes": 50 } } }cookies
 { "name": "Space Dog" }
 
@@ -549,7 +550,7 @@ paintIt(spaceship);
 
 spaceship.color // Returns 'glorious gold'
 Our function paintIt() permanently changed the color of our spaceship object. However, reassignment of the spaceship variable wouldn't work in the same way:
-
+```
 let spaceship = {
   homePlanet : 'Earth',
   color : 'red'
@@ -569,7 +570,7 @@ spaceship = {
   identified : false, 
   'transport type': 'flying'
 }; // Regular reassignment still works.
-
+```
 Question
 .
 Write a function greenEnergy() that has an object as a parameter and sets that object's 'Fuel Type' property to 'avocado oil'.
@@ -578,7 +579,7 @@ Stuck? Get a hint
 Write a function remotelyDisable() that has an object as a parameter and sets (or reassigns) that object's disabled property to true.
 Stuck? Get a hint
 3.
-Call your two functions with the spaceshipobject in the code editor, then console.log()the spaceship object to confirm those properties were changed/added.
+Call your two functions with the spaceship object in the code editor, then console.log()the spaceship object to confirm those properties were changed/added.
 Answer
 let spaceship = {
   'Fuel Type' : 'Turbo Fuel',
@@ -610,6 +611,7 @@ console.log(spaceship)
 Loops are programming tools that repeat a block of code until a condition is met. We learned how to iterate through arrays using their numerical indexing, but the key-value pairs in objects aren't ordered!JavaScript has given us alternative solution for iterating through objects with the for...in syntax .
 
 Eg
+```
 let spaceship = {
     crew: {
     captain: { 
