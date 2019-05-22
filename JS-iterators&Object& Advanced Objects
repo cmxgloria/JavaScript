@@ -6,6 +6,7 @@ Inspect the code in main.js. Notice the different methods being called on the ar
 .map()
 .filter()
 Eg
+```
 const artists = ['Picasso', 'Kahlo', 'Matisse', 'Utamaro'];
 
 artists.forEach(artist => {
@@ -27,7 +28,7 @@ const onlyNumbers = things.filter(thing => {
 });
 
 console.log(onlyNumbers);
-
+```
 //Picasso is one of my favorite artists.
 Kahlo is one of my favorite artists.
 Matisse is one of my favorite artists.
@@ -36,7 +37,25 @@ Utamaro is one of my favorite artists.
 [ 5, 3.14, 100 ]
 
 -The .forEach() Method
+Another way to pass a callback for .forEach() is to use arrow function syntax.
+```
+groceries.forEach(groceryItem => console.log(groceryItem));```
 
+groceries.forEach(groceryItem => console.log(groceryItem));
+We can also define a function beforehand to be used as the callback function.
+```
+function printGrocery(element){
+  console.log(element);
+}
+
+groceries.forEach(printGrocery);
+```
+
+function printGrocery(element){
+  console.log(element);
+}
+
+groceries.forEach(printGrocery);
 
 Eg
 groceries.forEach(groceryItem => console.log(groceryItem));
