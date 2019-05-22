@@ -886,6 +886,7 @@ Recharged! Energy is currently at high30%.
 -Getters
 Getters are methods that get and return the internal properties of an object. But they can do more than just retrieve the value of a property! Let's take a look at a getter method:
 Eg
+```
 const person = {
   _firstName: 'John',
   _lastName: 'Doe',
@@ -900,7 +901,11 @@ const person = {
 
 // To call the getter method: 
 person.fullName; // 'John Doe'
-
+```
+We use the get keyword followed by a function.
+We use an if...else conditional to check if both _firstName and _lastName exist (by making sure they both return truthy values) and then return a different value depending on the result.
+We can access the calling object’s internal properties using this. In fullName, we’re accessing both this._firstName and this._lastName.
+In the last line we call fullName on person. In general, getter methods do not need to be called with a set of parentheses. Syntactically, it looks like we’re accessing a property.
 Eg
 const robot = {
   _model: '1E78V2',
@@ -935,7 +940,7 @@ person.age=40;
 console.log(person.age);//logs:40
 person.age='40';//logs: You must assign a number to age
 
-
+Setter methods like age do not need to be called with a set of parentheses. Syntactically, it looks like we’re reassigning the value of a property.
 
 Eg
 person._age = 'forty-five'
@@ -1015,13 +1020,7 @@ const monsterFactory=(name, age)=>{
   }
 };
 
-Why sometimes
-function robotFactory(model, mobile){
-  return {}
-};
-Why function robotFactory=(model, mobile)=>{
-  return {}
-};
+
 
 Eg
 function robotFactory(model, mobile){
