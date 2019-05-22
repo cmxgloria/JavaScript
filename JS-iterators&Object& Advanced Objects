@@ -101,9 +101,11 @@ const smallNumbers = bigNumbers.map(num => num/100);
 
 console.log(smallNumbers)
 
-//Hello World
+//HelloWorld
 [1, 2, 3, 4, 5]
 (--if const secretMessage = animals.map(animal => animal[1]), then the second character of word show up; if const secretMessage = animals.map(animal => animals[0]), then 10 times of the Hen show up )
+also if without .join(''), then all the letter will seperate like ['H','e',....]
+
 -The .filter() Method
 Like .map(), .filter() returns a new array. However, .filter() returns an array of elements after filtering out certain elements from the original array. 
 Eg
@@ -117,7 +119,8 @@ console.log(shortWords);
 [ "chair", "music", "brick", "pen", "door" ]
 
 Eg
---const randomNumbers = [375, 200, 3.14, 7, 13, 852];
+--```
+const randomNumbers = [375, 200, 3.14, 7, 13, 852];
 
 // Call .filter() on randomNumbers below
 const smallNumbers = randomNumbers.filter(num => {
@@ -138,26 +141,26 @@ console.log(favoriteWords);
 console.log(longFavoriteWords);
 //output: [ "nostalgia", "hyperbole", "fervent", "esoteric", "serene" ]
 [ "nostalgia", "hyperbole", "esoteric" ]
-
+```
 --The .findIndex() Method
 We sometimes want to find the location of an element in an array. That's where the .findIndex() method comes in
 eg
+```
 const jumbleNums=[123,25, 78, 5, 9];
 const lessThanTen=jumbleNums.findIndex(num=>{
   return num<10;
 });
 console.log(lessThanTen); // Output: 3 
 console.log(jumbledNums[3]); // Output: 5(Great, the element in index 3 is the number 5. This makes sense since 5 is the first element that is less than 10.)
-
+````
 -eg
 If there isn't a single element in the array that satisfies the condition in the callback, then .findIndex() will return -1.
-const greaterThan1000 = jumbledNums.findIndex(num => {
+```const greaterThan1000 = jumbledNums.findIndex(num => {
   return num > 1000;
 });
 
 console.log(greaterThan1000); // Output: -1
-
-Dont understand
+```
 
 Eg
 const animals = ['hippo', 'tiger', 'lion', 'seal', 'cheetah', 'monkey', 'salamander', 'elephant'];
@@ -212,14 +215,15 @@ Third
 
 
 Eg
+```
 const numbers = [1, 2, 4, 10];
 
 const summedNums = numbers.reduce((accumulator, currentValue) => {
   return accumulator + currentValue
 }, 100)  // <- Second argument for .reduce()
-
+```
 console.log(summedNums); // Output: 117
-
+// .reduce(--,100) this format
 Eg
 const newNumbers = [1, 3, 5, 7];
 
