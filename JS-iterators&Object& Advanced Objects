@@ -101,8 +101,9 @@ const smallNumbers = bigNumbers.map(num => num/100);
 
 console.log(smallNumbers)
 
-//[1, 2, 3, 4, 5]
-
+//Hello World
+[1, 2, 3, 4, 5]
+(--if const secretMessage = animals.map(animal => animal[1]), then the second character of word show up; if const secretMessage = animals.map(animal => animals[0]), then 10 times of the Hen show up )
 -The .filter() Method
 Like .map(), .filter() returns a new array. However, .filter() returns an array of elements after filtering out certain elements from the original array. 
 Eg
