@@ -575,7 +575,7 @@ console.log('Orange you glad I broke out the loop!');
 Banana.
 Banana.
 Orange you glad I broke out the loop!
-
+(  if (i > 1 )---Banana print twice, if (i>0), print Banana once)
 Question
 1.
 Log each element from rapperArray in a forloop with the iterator variable i.
@@ -639,10 +639,11 @@ const checkThatTwoPlusTwoEqualsFourAMillionTimes = () => {
 const is2p2 = checkThatTwoPlusTwoEqualsFourAMillionTimes;
 is2p2();
 console.log(is2p2.name);
-// output: checkThatTwoPlusTwoEqualsFourAMillionTimes
+// output: checkThatTwoPlusTwoEqualsFourAMillionTimes (new variable.name then can put out the original long name)
 
 -Functions as Parameters
 A higher-order function is a function that either accepts functions as parameters, returns a function, or both! We call the functions that get passed in as parameters and invoked callback functionsbecause they get called during the execution of the higher-order function.
+With callbacks, we pass in the function itself by typing the function name without the parentheses (that would evaluate to the result of calling the function):
 Eg
 const timeFuncRuntime = funcParameter => {
    let t1 = Date.now();
@@ -664,6 +665,7 @@ timeFuncRuntime(() => {
 Doesnt work
 In this example, we invoked timeFuncRuntime() with an anonymous function that counts backwards from 10. Anonymous functions can be arguments too!
 Eg
+```
 const checkThatTwoPlusTwoEqualsFourAMillionTimes = () => {
   for(let i = 1; i <= 1000000; i++) {
     if ( (2 + 2) != 4) {
@@ -696,7 +698,8 @@ const checkConsistentOutput = (func, val) => {
 };
 
 checkConsistentOutput(addTwo, 10);
-Dont understand
+```
+
 Review
 Abstraction allows us to write complicated code in a way that's easy to reuse, debug, and understand for human readers
 We can work with functions the same way we would any other type of data including reassigning them to new variables
