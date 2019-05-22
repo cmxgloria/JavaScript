@@ -718,6 +718,84 @@ defining getters and setters in objects.
 creating factory functions.
 using destructuring techniques.
 -The this Keyword
+What are advanced objects?
+Get Help
+JavaScript
+ 
+axelkaban
+Codecademy Advisor
+Oct '18
+Question
+
+What’s the difference between advanced objects 19 and how we have been making them?
+
+Answer
+
+Advanced objects are not a different type of object, they are mentioned as advanced, because of the advanced features we can implement to our objects. For example, we can build an object like so:
+
+```let peson = {
+  name: 'Axel',
+  location: 'US',
+  isAdvsor: true
+}
+```
+But what if we wanted to create many people, doing it one by one will be tiresome, so an advanced feature we can use is the Factory function 32 and it can purposely be created to make objects, ie.:
+
+```const makeCodecademyPeople = (name, location, isAdvisor) => {
+  return {
+    name,
+    location,
+    isAdvisor
+    }
+	};
+};
+
+//now, calling the function will create a new object that we can assign to 
+//a variable:
+let axelAdvisor = makeCodecademyPeople('Axel', 'US', true);
+
+console.log(axelAdvisor.name) //Axel
+```
+
+```
+const robot = {
+  model: 'B-4MI',
+  mobile: true,
+  greetMaster() {
+  	console.log(`I'm model ${this.model}, how may I be of service?`);
+  }
+}
+
+const massProdRobot = (model, mobile) => {
+  return {
+    model,
+    mobile,
+    greetMaster() {
+      console.log(`I'm model ${this.model}, how may I be of service?`);
+    }
+  }
+}
+
+const shinyNewRobot = massProdRobot('TrayHax', true)
+
+const chargingStation = {
+  _name: 'Electrons-R-Us',
+  _robotCapacity: 120,
+  _active: true,
+  _chargingRooms: ['Low N Slow', 'Middle of the Road', 'In and Output'],
+
+  set robotCapacity(newCapacity) {
+    if (typeof newCapacity === 'number') {
+      this._robotCapacity = newCapacity;
+    } else {
+      console.log(`Change ${newCapacity} to a number.`)
+    }
+  },
+  get robotCapacity() {
+    return this._robotCapacity;
+  }
+}
+```
 Eg
 In our goat object we have a .makeSound() method. We can invoke the .makeSound() method on goat.
 const goat={
