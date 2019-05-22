@@ -334,16 +334,19 @@ two ways we can access an object's property. Let's explore the first way— dot 
 'hello'.length;//return 5
 
 Eg
+```
+
 let spaceship = {
   homePlanet: 'Earth',
   color: 'silver'
 };
 spaceship.homePlanet; // Returns 'Earth',
 spaceship.color; // Returns 'silver',
-
+```
 
 
 Eg
+```
 let spaceship = {
   homePlanet: 'Earth',
   color: 'silver',
@@ -351,6 +354,11 @@ let spaceship = {
   numCrew: 5,
   flightPath: ['Venus', 'Mars', 'Saturn']
 };
+console.log(crewCount);
+console.log(planetArray);
+```
+//print:5
+[ "Venus", "Mars", "Saturn" ]
 
 // Write your code below
 
@@ -366,7 +374,7 @@ The second way to access a key's value is by using bracket notation, [ ].
 We *must* use bracket notation when accessing keys that have numbers, spaces, or special characters in them. Without bracket notation in these situations, our code would throw an error.
 
 Eg
-
+```
 let spaceship = {
   'Fuel Type': 'Turbo Fuel',
   'Active Duty': true,
@@ -377,7 +385,7 @@ spaceship['Active Duty'];   // Returns true
 spaceship['Fuel Type'];   // Returns  'Turbo Fuel'
 spaceship['numCrew'];   // Returns 5
 spaceship['!!!!!!!!!!!!!!!'];   // Returns undefined
-
+```
 With bracket notation you can also use a variable inside the brackets to select the keys of an object. This can be especially helpful when working with functions:
 
 
@@ -387,6 +395,7 @@ let returnAnyProp = (objectName, propName) => objectName[propName];
 returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
 
 Eg
+```
 let spaceship = {
   'Fuel Type' : 'Turbo Fuel',
   'Active Mission' : true,
@@ -401,6 +410,7 @@ let propName =  'Active Mission';
 let isActive = spaceship['Active Mission'];
 
 console.log(spaceship[propName]);
+```
  -----look at the lesson question----
 
 -Property Assignment
