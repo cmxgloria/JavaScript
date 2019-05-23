@@ -325,7 +325,7 @@ class Cat extends Animal {
     this._usesLitter = usesLitter;
   }
 }
-The extends keyword makes the methods of the animal class available inside the cat class.
+`The extends keyword makes the methods of the animal class available inside the cat class`.
 The constructor, called when you create a new Cat object, accepts two arguments, name and usesLitter.
 The super keyword calls the constructor of the parent class. In this case, super(name) passes the name argument of the Cat class to the constructor of the Animal class. When the Animal constructor runs, it sets this._name = name; for new Cat instances.
 _usesLitter is a new property that is unique to the Cat class, so we set it in the Cat constructor.
@@ -337,6 +337,7 @@ console.log(bryceCat._name); // output: Bryce
 
 
 Eg
+```
 class HospitalEmployee {
   constructor(name) {
     this._name = name;
@@ -364,9 +365,14 @@ class Nurse extends HospitalEmployee {
 }
 
 const nurseOlynyk = new Nurse('Olynyk', ['Trauma', 'Pediatrics']);
-const nurseOlynyk = new Nurse('Olynyk', ['Trauma', 'Pediatrics']);
+console.log(nurseOlynyk);
+//Nurse {
+  _name: 'Olynyk',
+  _remainingVacationDays: 20,
+  _certifications: [ 'Trauma', 'Pediatrics' ] }
 
 
+```
 -Inheritance IV
 When we call extends in a class declaration, all of the parent methods are available to the child class.
 Eg
@@ -439,7 +445,7 @@ console.log(nurseOlynyk.remainingVacationDays);
 // print 15
 
 -Inheritance V
-In addition to the inherited features, child classes can contain their own properties, getters, setters, and methods.
+In addition to the inherited features, 'child classes can contain their own properties, getters, setters, and methods.'
 Below, we will add a usesLitter getter. The syntax for creating getters, setters, and methods is the same as it is in any other class.
 Question
 1.
@@ -457,6 +463,7 @@ At the bottom of main.js call the .addCertification() method on nurseOlynyk with
 4.
 Log the value saved to the certificationsproperty of nurseOlynyk.
 Answer
+```
 class HospitalEmployee {
   constructor(name) {
     this._name = name;
@@ -498,11 +505,12 @@ nurseOlynyk.addCertification('Genetics');
 console.log(nurseOlynyk.certifications);
 //print : 15
 [ "Trauma", "Pediatrics", "Genetics" ]
-
+```
 -Static Methods
 Sometimes you will want a class to have methods that aren't available in individual instances, but that you can call directly from the class.
 Take the Date class, for example — you can both create Date instances to represent whatever date you want, and call static methods, like Date.now() which returns the current date, directly from the class. The .now() method is static, so you can call it directly from the class, but not from an instance of the class.
 Let's see how to use the static keyword to create a static method called generateName method in our Animal class:
+```
 class Animal{
   constructor(name){
     this._name=name;
@@ -515,12 +523,14 @@ class Animal{
   }
 }
 console.log(Animal.generateName());//returns a name
+```
 //You cannot access the .generateName() method from instances of the Animal class or instances of its subclasses (See below).
 const tyson = new Animal('tyson');
 tyson.generateName();//typeError
 //The example above will result in an error, because you cannot call static methods (.generateName()) on an instance (tyson).
 
 Another example
+```
 class HospitalEmployee {
   constructor(name) {
     this._name = name;
@@ -564,7 +574,7 @@ nurseOlynyk.takeVacationDays(5);
 console.log(nurseOlynyk.remainingVacationDays);
 nurseOlynyk.addCertification('Genetics');
 console.log(nurseOlynyk.certifications);
-
+```
 -Review: Classes
 Classes are templates for objects.
 Javascript calls a constructor method when we create a new instance of a class.
