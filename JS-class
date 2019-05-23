@@ -1,8 +1,9 @@
--new chapter ‘class’
+#new chapter ‘class’
 JavaScript is an object-oriented programming (OOP) 
 Classes are a tool that developers use to quickly produce similar objects.
 
 Example 1
+```
 let halley = {
   _name: 'Halley',
   _behavior: 0,
@@ -19,8 +20,10 @@ let halley = {
     this._behavior++;
   }
 }
-
+Instead of using the syntax above for every dog that joins the daycare, we can create a Dog class that serves as a template for creating new Dog objects. For each new dog, you can provide a value for their name.
+```
 Example 2, try to compare 2 examples
+```
 class Dog {
   constructor(name) {
     this._name = name;
@@ -45,15 +48,18 @@ console.log(halley.behavior); // Print behavior value to console
 halley.incrementBehavior(); // Add one to behavior
 console.log(halley.name); // Print name value to console
 console.log(halley.behavior); // Print behavior value to console
+```
 //
 Halley
 0
 Halley
 1
-
+//constructor(),get() method "binglie"
 
 -Constructor
 Although you may see similarities between class and object syntax, there is one important method that sets them apart. It's called the constructor method. JavaScript calls the constructor() method every time it creates a new instance of a class.
+
+'JavaScript calls the constructor() method every time it creates a new instance of a class.'
 class Dog{
   constructor(name){
     this.name=name;
@@ -87,7 +93,8 @@ const halley = new Dog('Halley'); // Create new Dog instance
 console.log(halley.name); // Log the name value saved to halley
 // Output: 'Halley'
 
-
+//We use the new keyword to generate a new instance of the Dog class. The new keyword calls the constructor(), runs the code inside of it, and then returns the new instance.
+We pass the 'Halley' string to the Dog constructor, which sets the name property to 'Halley'.
 Eg
 class Surgeon {
   constructor(name, department) {
@@ -105,10 +112,11 @@ console.log(surgeonDurant);
 { "name": "Curry", "department": "Cardiovascular" }
 { "name": "Durant", "department": "Orthopedics" }
 
+// constructor(name, department) pass two properties
 
 -Methods
 we will add getters and a method to bring our class to life.
-Class method and getter syntax is the same as it is for objects except you can not include commas between methods.
+Class method and getter syntax is the same as it is for objects except you can `not include commas between methods.`
 
 class Dog {
   constructor(name) {
@@ -191,6 +199,9 @@ class Dog {
 }
 
 const halley = new Dog('Halley');
+For methods, you must also include opening and closing parentheses.
+
+Let’s take a moment to create two Dog instances and call our .incrementBehavior() method on one of them.
 let nikko = new Dog('Nikko'); // Create dog named Nikko
 nikko.incrementBehavior(); // Add 1 to nikko instance's behavior
 let bradford = new Dog('Bradford'); // Create dog name Bradford
@@ -229,7 +240,7 @@ const surgeonCurry = new Surgeon('Curry', 'Cardiovascular');
 const surgeonDurant = new Surgeon('Durant', 'Orthopedics');
 
 console.log(surgeonCurry.name);
-surgeonCurry.takeVacationDays(3);
+surgeonCurry.takeVacationDays(3);//Call .takeVacationDays() on surgeonCurry, with an input of 3.
 console.log(surgeonCurry.remainingVacationDays);
 //print: Curry 17
 
