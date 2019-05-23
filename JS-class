@@ -527,7 +527,7 @@ console.log(Animal.generateName());//returns a name
 //You cannot access the .generateName() method from instances of the Animal class or instances of its subclasses (See below).
 const tyson = new Animal('tyson');
 tyson.generateName();//typeError
-//The example above will result in an error, because you cannot call static methods (.generateName()) on an instance (tyson).
+//The example above will result in an error, because you` cannot call static methods (.generateName()) on an instance (tyson)`.
 
 Another example
 ```
