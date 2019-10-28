@@ -552,6 +552,7 @@ sayThanks('Cole');
 //output :Thank you for your purchase Cole!We appreciate your business.
 
 -Calling a Function
+```
 -Default Parameters
 Eg
 function greeting(name='stranger'){
@@ -592,6 +593,9 @@ const numOfMonitors = monitorCount(5, 4);
 
 console.log(numOfMonitors);
 //print 20
+```
+
+```
 -Helper Functions
 Eg
 function multiplyByNineFifths(number){
@@ -622,6 +626,10 @@ const totalCost = costOfMonitors(5, 4);
 
 console.log(totalCost);
 //print 4000
+
+```
+
+```
 -Function Expressions
 
 Eg
@@ -637,6 +645,10 @@ plantNeedsWater('Tuesday');
 
 console.log(plantNeedsWater('Tuesday'));
 //print false
+
+```
+
+``
 -Arrow Functions
 ES6 introduced arrow function syntax, a shorter way to write functions by using the special "fat arrow" () => notation.
 you first include the parameters inside the ( ) and then add an arrow => that points to the function body surrounded in { } like this:
@@ -669,6 +681,7 @@ const squareNum=(num)=>{
 const squareNum=num=>num * num;
 Eg
 const plantNeedsWater = day => day === 'Wednesday' ? true : false;
+```
 
 -Review Functions
 Give yourself a pat on the back, you just navigated through functions!
