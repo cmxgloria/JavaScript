@@ -1,3 +1,4 @@
+```
 -Blocks and Scope
 A block of code could be a function, like this:
 Eg
@@ -22,7 +23,10 @@ const logCitySkyline = () => {
 
 console.log(logCitySkyline());
 //The stars over the Empire State Building in New York City.```
--Global Scope
+```
+
+#-Global Scope
+
 In global scope, variables are declared outside of blocks. These variables are called global variables
 ```const color='blue';
 const returnSkyColor=()=>{
