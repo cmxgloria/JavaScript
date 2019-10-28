@@ -98,7 +98,7 @@ const logSkyColor=()=>{
   console.log(color);
   };
 logSkyColor();//blue
-如果 console.log(color);//ReferenceError
+console.log(color);//ReferenceError
 
 -eg
 const logVisibleLightWaves = () => {
@@ -319,6 +319,10 @@ console.log(pastaIndex);
 [ "bananas", "coffee beans", "brown rice" ]
 [ "popcorn", "bananas", "coffee beans", "brown rice", "pasta", "coconut oil", "plantains" ]
 4
+
+```
+indexOf it to find the specific location of the element
+```
 
 
 -Arrays and Functions
