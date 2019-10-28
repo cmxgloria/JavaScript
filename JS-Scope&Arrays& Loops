@@ -335,6 +335,7 @@ function addFlower(arr){
 addFlower(flowers);
 console.log(flowers);
 // Output: ['peony', 'daffodil', 'marigold', 'lily']
+//We call addFlower() with an argument of flowers which will execute the code inside addFlower.
 
 
 
@@ -357,7 +358,7 @@ removeElement(concept);
 
 console.log(concept);
 //[ "arrays", "can", "be", "MUTATED" ]
-[ "arrays", "can", "be" ]
+//[ "arrays", "can", "be" ]...........this one use the arrow function
 
 
 -Nested Arrays
