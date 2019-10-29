@@ -708,8 +708,6 @@ const timeFuncRuntime = funcParameter => {
   return t2 - t1;
 };
 
-// Write your code below
-
 const time2p2 = timeFuncRuntime(checkThatTwoPlusTwoEqualsFourAMillionTimes);
 
 const checkConsistentOutput = (func, val) => {
