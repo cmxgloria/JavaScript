@@ -477,7 +477,7 @@ for(let i=0; i<myArray.length; i++){
   }
 }
 
-Doesnt work
+
 Eg
 let bobsFollowers = ['Joe', 'Marta', 'Sam', 'Erin'];
 let tinasFollowers = ['Sam', 'Marta', 'Elle'];
@@ -491,7 +491,9 @@ for(let i=0; i<bobsFollowers.length; i++){
   }
   
 }
- Doesnt work
+console.log(mutualFollowers);
+//['Marta', 'Sam']
+
 
 -The While Loop
 // A for loop that prints 1, 2, and 3
