@@ -88,6 +88,10 @@ const bigNumbers=numbers.map(number=>{
 console.log(numbers); // Output: [1, 2, 3, 4, 5]
 console.log(bigNumbers); // Output: [10, 20, 30, 40, 50]
 
+
+.map() works in a similar manner to .forEach()— the major difference is that .map() returns a new array.
+
+
 Eg
 const animals = ['Hen', 'elephant', 'llama', 'leopard', 'ostrich', 'Whale', 'octopus', 'rabbit', 'lion', 'dog'];
 
