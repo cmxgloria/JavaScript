@@ -36,6 +36,8 @@ Utamaro is one of my favorite artists.
 [ 1, 4, 9, 16, 25 ]
 [ 5, 3.14, 100 ]
 
+// it has to do with parameter
+
 -The .forEach() Method
 Another way to pass a callback for .forEach() is to use arrow function syntax.
 ```
