@@ -149,14 +149,14 @@ console.log(longFavoriteWords);
 [ "nostalgia", "hyperbole", "esoteric" ]
 ```
 --The .findIndex() Method
-We sometimes want to find the location of an element in an array. That's where the .findIndex() method comes in
+findIndex() Method is to find the location of an element in an array. 
 eg
 ```
 const jumbleNums=[123,25, 78, 5, 9];
 const lessThanTen=jumbleNums.findIndex(num=>{
   return num<10;
 });
-console.log(lessThanTen); // Output: 3 
+console.log(lessThanTen); // Output: 3 the element in index 3 is the number 5. This makes sense since 5 is the first element that is less than 10.
 console.log(jumbledNums[3]); // Output: 5(Great, the element in index 3 is the number 5. This makes sense since 5 is the first element that is less than 10.)
 ````
 -eg
@@ -167,22 +167,22 @@ If there isn't a single element in the array that satisfies the condition in the
 
 console.log(greaterThan1000); // Output: -1
 ```
+//
+If there isn’t a single element in the array that satisfies the condition in the callback, then .findIndex() will return -1.
+
 
 Eg
 const animals = ['hippo', 'tiger', 'lion', 'seal', 'cheetah', 'monkey', 'salamander', 'elephant'];
 
-const foundAnimal = animals.findIndex(animal => {
+const foundAnimal = animals.findIndex(animal=>
+{
   return animal === 'elephant';
 });
-console.log(foundAnimal);
-
-const startsWithS = animals.findIndex(animal => {
-  return animal[0] === 's' ? true : false;
+const startsWithS = animals.findIndex(animal=>{
+  return animal[0] ==='s' ? true : false;
 });
-
-
+console.log(foundAnimal);
 console.log(startsWithS);
-
 //7
   3
 
@@ -310,6 +310,18 @@ const smallerNums = nums.map(num => num - 5);
 nums.every(num => num < 0);
 // OR nums.some(num => num < 0);
 ```
+//Have you visited Orlando?
+Have you visited Dubai?
+Have you visited Edinburgh?
+Have you visited Chennai?
+Have you visited Accra?
+Have you visited Denver?
+Have you visited Eskisehir?
+Have you visited Medellin?
+Have you visited Yokohama?
+CODECADEMY
+
+
 -Review
 .forEach() is used to execute the same code on every element in an array but does not change the array and 'returns undefined'.
 .map() executes the same code on every element in an array and returns a 'new' array with the updated elements.
