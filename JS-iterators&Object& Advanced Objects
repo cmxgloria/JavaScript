@@ -737,21 +737,24 @@ creating factory functions.
 using destructuring techniques.
 -The this Keyword
 What are advanced objects?
-Get Help
-JavaScript
- 
-axelkaban
-Codecademy Advisor
-Oct '18
-Question
 
-What’s the difference between advanced objects 19 and how we have been making them?
 
 Answer
+```
+const robot = {
+  energyLevel: 100,
+  checkEnergy() {
+    console.log(`Energy is currently at ${this.energyLevel}%.`)
+  }
+}
+
+robot.checkEnergy();
+//Energy is currently at 100%.
+```
 
 Advanced objects are not a different type of object, they are mentioned as advanced, because of the advanced features we can implement to our objects. For example, we can build an object like so:
 
-```let peson = {
+```let person = {
   name: 'Axel',
   location: 'US',
   isAdvsor: true
