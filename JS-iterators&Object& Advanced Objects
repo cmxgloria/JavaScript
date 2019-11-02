@@ -1011,8 +1011,11 @@ const monsterFactory = (name, age, energySource, catchPhrase)=>{
 };
 const ghost = monsterFactory('Ghouly',251,'ectoplasm', 'BOO!');
 ghost.scare();
+console.log(gosht.name);
+console.log(gosht.age);
 //print:”BOO!”
-
+//'Ghouly'
+//251
 Eg
     const robotFactory = (model, mobile) => {
   return {
@@ -1063,7 +1066,7 @@ console.log(newRobot.mobile)
 
 -Destructured Assignment
 We often want to extract key-value pairs from objects and save them as properties. 
-Eg
+eg
 const vampire={
   name: 'Tom',
   residence: 'Melbourne',
@@ -1077,8 +1080,11 @@ const residence=vampire.residence;
 console.log(residence);
 const {day}=vampire.preferences;
 console.log(day);
+
 //print: Melbourne
 	Stay inside
+	
+However, we can also take advantage of a destructuring technique called destructured assignment to save ourselves some keystrokes. In destructured assignment we create a variable with the name of an object’s key that is wrapped in curly braces { } and assign to it the object. Take a look at the example below:
 n destructured assignment we create a variable with the name of an object's key that is wrapped in curly braces { } and assign to it the object. Take a look at the example below: same answer pop up.
 const {residence}=vampire;
 console.log(residence);
