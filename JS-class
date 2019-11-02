@@ -334,9 +334,11 @@ _usesLitter is a new property that is unique to the Cat class, so we set it in t
 Notice, we call super on the first line of our constructor(), then set the usesLitter property on the second line. In a constructor(), you must always call the super method before you can use the thiskeyword — if you do not, JavaScript will throw a reference error. To avoid reference errors, it is best practice to call super on the first line of subclass constructors.
 Below, we create a new Cat instance and call its name with the same syntax as we did with the Dogclass:
 
+```
 const bryceCat = new Cat('Bryce', false); 
 console.log(bryceCat._name); // output: Bryce
-
+```
+//we create a new instance the Cat class, named bryceCat. We pass it 'Bryce' and false for our name and usesLitter arguments. When we call console.log(bryceCat._name) our program prints, Bryce.
 
 Eg
 ```
