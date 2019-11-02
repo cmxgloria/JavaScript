@@ -176,6 +176,8 @@ console.log(surgeonDurant);
 //print:
 { "_name": "Curry", "_department": "Cardiovascular", "_remainingVacationDays": 20 }
 { "_name": "Durant", "_department": "Orthopedics", "_remainingVacationDays": 20 }
+17
+
 
 -Method Calls
 Eg
